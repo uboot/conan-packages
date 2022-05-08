@@ -3,7 +3,7 @@ from conans import ConanFile, CMake, tools
 
 class BaseConan(ConanFile):
     name = "base"
-    version = "1.2.3"
+    version = "1.2.4"
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake"
     revision_mode = "scm"
