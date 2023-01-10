@@ -1,10 +1,11 @@
 from conans import ConanFile, CMake, tools
 
 
-class BaseConan(ConanFile):
-    name = "base"
+class TreeConan(ConanFile):
+    name = "tree"
     version = "1.2.3"
     settings = "os", "compiler", "build_type", "arch"
+    requires = ("base/1.2.3@mycompany/stable", "core/1.2.3@mycompany/stable")
     generators = "cmake"
     revision_mode = "scm"
 

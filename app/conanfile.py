@@ -4,18 +4,17 @@ from conans import ConanFile, CMake, tools
 class AppConan(ConanFile):
     name = "app"
     version = "1.2.3"
-    license = "<Put the package license here>"
-    author = "<Put your name here> <And your email here>"
-    url = "<Package recipe repository url here, for issues about the package>"
-    description = "<Description of Hello here>"
-    topics = ("<Put some tag here>", "<here>", "<and here>")
     settings = "os", "compiler", "build_type", "arch"
-    options = {"shared": [True, False]}
-    default_options = {"shared": False}
-    requires = ("hello/1.2.3@mycompany/stable")
     generators = "cmake"
     revision_mode = "scm"
-    
+
+    def requirements(self):
+        self.requires("tree/1.2.3@mycompany/stable")
+        self.requires("core/1.2.3@mycompany/stable")
+        if self.settings.os != "Windows":
+            self.requires("hello/1.2.3@mycompany/stable")
+            self.options['hello'].shared = True
+
     def source(self):
         self.run("git clone https://github.com/conan-io/hello.git")
         # This small hack might be useful to guarantee proper /MT /MD linkage

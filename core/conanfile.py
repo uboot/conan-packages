@@ -1,8 +1,8 @@
 from conans import ConanFile, CMake, tools
 
 
-class BaseConan(ConanFile):
-    name = "base"
+class CoreConan(ConanFile):
+    name = "core"
     version = "1.2.3"
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake"

@@ -1,12 +1,13 @@
 from conans import ConanFile, CMake, tools
 
 
-class BaseConan(ConanFile):
-    name = "base"
-    version = "1.2.3"
+class DeadlockConan(ConanFile):
+    name = "deadlock"
+    version = "0.0.1"
     settings = "os", "compiler", "build_type", "arch"
+    options = {"shared": [True, False]}
+    default_options = {"shared": False}
     generators = "cmake"
-    revision_mode = "scm"
 
     def source(self):
         self.run("git clone https://github.com/conan-io/hello.git")
