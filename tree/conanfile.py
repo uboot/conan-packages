@@ -3,9 +3,9 @@ from conans import ConanFile, CMake, tools
 
 class TreeConan(ConanFile):
     name = "tree"
-    version = "1.2.3"
+    version = "2.0.0"
     settings = "os", "compiler", "build_type", "arch"
-    requires = ("base/1.2.3@mycompany/stable", "core/1.2.3@mycompany/stable")
+    requires = ("base/1.2.3@mycompany/stable", "core/2.0.0@mycompany/stable")
     generators = "cmake"
     revision_mode = "scm"
 
