@@ -7,6 +7,7 @@ class BaseConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake"
     revision_mode = "scm"
+    
 
     def source(self):
         self.run("git clone https://github.com/conan-io/hello.git")
